@@ -152,7 +152,7 @@ export function HeroSection() {
 
         <div className="mb-6 px-4">
           <p className="text-amber-700 text-sm leading-relaxed">
-            Dengan penuh rasa syukur, kami mengumumkan bahwa kami telah menikah.
+            Dengan penuh rasa syukur, kami mengumumkan bahwa kami akan menikah.
             Terima kasih atas doa dan dukungan yang telah diberikan.
           </p>
         </div>
