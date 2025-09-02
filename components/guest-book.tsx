@@ -18,7 +18,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { formatToHuman, formatToRelative, toJakartaTime } from "@/lib/utils";
+import { toJakartaTime } from "@/lib/utils";
 import { useMessages } from "@/hooks/useGetMessage";
 import { usePostMessage } from "@/hooks/usePostMessage";
 import { useUpdateMessages } from "@/hooks/useUpdateMessage";
@@ -236,7 +236,9 @@ export function GuestBook({ initialMessages = [] }: GuestBookProps) {
             </div>
           </div>
 
-          {filteredMessages.length === 0 ? (
+          {isLoading ? (
+            <p className="text-amber-700">Memuat ucapan...</p>
+          ) : filteredMessages.length === 0 ? (
             <Card className="text-center py-12 border-amber-200 bg-white/70 backdrop-blur-sm">
               <CardContent>
                 <MessageCircle className="w-12 h-12 mx-auto mb-4 text-amber-600" />

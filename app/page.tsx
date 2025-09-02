@@ -95,6 +95,7 @@ export default function Home() {
         onScrollToMessages={handleScrollToMessages}
         onShare={handleShare}
       />
+<MusicPlayer songTitle="I Think They Call This Love" artist="Elliot James Reay" src="/I-think-they-call-this-love.mp3" />
 
       <CountdownTimer
         targetDate="2025-09-04T00:00:00"
@@ -106,7 +107,6 @@ export default function Home() {
 
       <PhotoGallery photos={photos} />
 
-      <MusicPlayer songTitle="Perfect" artist="Ed Sheeran" src="/Perfect-(Mr-Jat.in).mp3" />
 
       <GuestBook  />
 

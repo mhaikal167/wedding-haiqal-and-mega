@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Music } from "lucide-react"
@@ -24,6 +24,16 @@ export function MusicPlayer({ songTitle, artist, src }: MusicPlayerProps) {
     }
     setIsPlaying(!isPlaying)
   }
+
+    useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true)
+      }).catch((err) => {
+        console.log("Autoplay diblokir browser:", err)
+      })
+    }
+  }, [])
 
   return (
     <section className="py-8 px-4 bg-gradient-to-r from-pink-100 to-rose-100">
@@ -53,7 +63,7 @@ export function MusicPlayer({ songTitle, artist, src }: MusicPlayerProps) {
             <audio
               ref={audioRef}
               src={src}
-              onEnded={() => setIsPlaying(false)} // reset ke Play lagi kalo selesai
+              onEnded={() => setIsPlaying(false)} 
             />
           </CardContent>
         </Card>

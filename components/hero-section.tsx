@@ -52,7 +52,7 @@ export function HeroSection({ onScrollToMessages, onShare }: HeroSectionProps) {
           <div className="floral-frame">
             <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl bg-white p-1 relative z-10">
               <img
-                src="/images/lamaran-1.jpg"
+                src="/images/lamaran-3.jpg"
                 alt="Justin & Sisca"
                 className="w-full h-full object-cover rounded-full"
               />
@@ -111,14 +111,24 @@ export function HeroSection({ onScrollToMessages, onShare }: HeroSectionProps) {
         <p className="text-amber-700 text-xl font-medium">Kepada</p>
         <p className="text-amber-800 text-2xl font-semibold">{guestName}</p>
       </div>
-
-      <Button
-        size="lg"
-        className="bg-amber-700 hover:bg-amber-800 text-white rounded-full px-12 py-4 text-lg font-medium shadow-lg w-full max-w-xs"
-        onClick={onScrollToMessages}
-      >
-        Lihat Pengumuman
-      </Button>
+     
+      <div className="mx-auto flex flex-col items-center justify-center w-full max-w-xs cursor-pointer">
+          <div className="animate-bounce mb-2">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="24" fill="#92400e" opacity="0.12" />
+              <path
+                d="M24 16v16M24 32l-6-6M24 32l6-6"
+                stroke="#92400e"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+          <span className="text-amber-700 text-lg font-medium">
+            Scroll untuk lihat pengumuman
+          </span>
+        </div>
       </div>
     </section>
   )
