@@ -1,29 +1,29 @@
-"use client"
-import { useRef, useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Music } from "lucide-react"
+"use client";
+import { useRef, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Music } from "lucide-react";
 
 type MusicPlayerProps = {
-  songTitle: string
-  artist: string
-  src: string // link ke file lagu
-}
+  songTitle: string;
+  artist: string;
+  src: string; 
+};
 
 export function MusicPlayer({ songTitle, artist, src }: MusicPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const togglePlay = () => {
-    if (!audioRef.current) return
+    if (!audioRef.current) return;
 
     if (isPlaying) {
-      audioRef.current.pause()
+      audioRef.current.pause();
     } else {
-      audioRef.current.play()
+      audioRef.current.play();
     }
-    setIsPlaying(!isPlaying)
-  }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <section className="py-8 px-4 bg-gradient-to-r from-pink-100 to-rose-100">
@@ -53,11 +53,11 @@ export function MusicPlayer({ songTitle, artist, src }: MusicPlayerProps) {
             <audio
               ref={audioRef}
               src={src}
-              onEnded={() => setIsPlaying(false)} 
+              onEnded={() => setIsPlaying(false)}
             />
           </CardContent>
         </Card>
       </div>
     </section>
-  )
+  );
 }

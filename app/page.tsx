@@ -52,8 +52,6 @@ export default function Home() {
     { id: 6, src: "/images/family-photo.jpg", alt: "Family Photo" },
   ];
 
-
-
   const bankAccounts = [
     {
       bank: "Bank Mandiri",
@@ -62,7 +60,6 @@ export default function Home() {
       color: "primary" as const,
     },
   ];
-
 
   const handleShare = () => {
     if (navigator.share) {
@@ -77,12 +74,9 @@ export default function Home() {
     }
   };
 
-
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection
-      />
-<MusicPlayer songTitle="I Think They Call This Love" artist="Elliot James Reay" src="/I-think-they-call-this-love.mp3" />
+      <HeroSection />
 
       <CountdownTimer
         targetDate="2025-09-04T00:00:00"
@@ -93,9 +87,12 @@ export default function Home() {
       <LoveStoryTimeline events={timelineEvents} />
 
       <PhotoGallery photos={photos} />
-
-
-      <GuestBook  />
+      <MusicPlayer
+        songTitle="I Think They Call This Love"
+        artist="Elliot James Reay"
+        src="/I-think-they-call-this-love.mp3"
+      />
+      <GuestBook />
 
       <LocationRSVP
         eventDate="Kamis, 4 September 2025"
