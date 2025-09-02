@@ -58,7 +58,7 @@ export function LocationRSVP({
         {/* Heading */}
         <div className="text-center mb-12">
           <MapPin className="w-12 h-12 mx-auto mb-4 text-primary" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Lokasi Akad</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Lokasi Akad dan Syukuran</h2>
           <p className="text-muted-foreground text-lg">
             Bergabunglah dengan kami dalam perayaan
           </p>
@@ -68,7 +68,7 @@ export function LocationRSVP({
           {/* Detail Acara */}
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Detail Acara</CardTitle>
+              <CardTitle>Detail Acara Akad</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -113,8 +113,55 @@ export function LocationRSVP({
             </CardContent>
           </Card>
 
+           <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle>Detail Acara Syukuran</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-semibold">Tanggal</p>
+                  <p className="text-muted-foreground">{eventDate}</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-semibold">Waktu</p>
+                  <p className="text-muted-foreground">11:00 - 14:00 WIB</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="font-semibold">Tempat</p>
+                  <p className="text-muted-foreground">
+                    Ramstar Kitchen
+                    <br />
+                    Letjen S. Parman St No.65, RT.14/RW.66, Slipi, Palmerah, West Jakarta City, Jakarta 11410
+                  </p>
+                </div>
+              </div>
+              <Button
+                className="w-full mt-4 bg-transparent"
+                variant="outline"
+                asChild
+              >
+                <a
+                  href="https://maps.app.goo.gl/4Awjv9CdsvHWd7xF8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Buka di Google Maps
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
           {/* RSVP Form */}
-          <Card className="shadow-lg">
+          <Card className="shadow-lg col-span-1 md:col-span-2">
             <CardHeader>
               <CardTitle>Konfirmasi Kehadiran</CardTitle>
             </CardHeader>
