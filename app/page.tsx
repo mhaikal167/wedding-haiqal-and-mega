@@ -78,6 +78,11 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <HeroSection />
 
+      <MusicPlayer
+        songTitle="I Think They Call This Love"
+        artist="Elliot James Reay"
+        src="/I-think-they-call-this-love.mp3"
+      />
       <CountdownTimer
         targetDate="2025-09-04T00:00:00"
         title="Menuju Hari Bahagia"
@@ -87,11 +92,6 @@ export default function Home() {
       <LoveStoryTimeline events={timelineEvents} />
 
       <PhotoGallery photos={photos} />
-      <MusicPlayer
-        songTitle="I Think They Call This Love"
-        artist="Elliot James Reay"
-        src="/I-think-they-call-this-love.mp3"
-      />
       <GuestBook />
 
       <LocationRSVP
