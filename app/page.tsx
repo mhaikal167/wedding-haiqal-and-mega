@@ -63,9 +63,6 @@ export default function Home() {
     },
   ];
 
-  const handleScrollToMessages = () => {
-    document.getElementById("ucapan")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const handleShare = () => {
     if (navigator.share) {
@@ -80,20 +77,10 @@ export default function Home() {
     }
   };
 
-  const handleRSVP = (attending: boolean) => {
-    // In a real app, this would save to a database
-    alert(
-      attending
-        ? "Terima kasih! Kami tunggu kehadiran Anda."
-        : "Terima kasih atas konfirmasinya."
-    );
-  };
 
   return (
     <div className="min-h-screen bg-background">
       <HeroSection
-        onScrollToMessages={handleScrollToMessages}
-        onShare={handleShare}
       />
 <MusicPlayer songTitle="I Think They Call This Love" artist="Elliot James Reay" src="/I-think-they-call-this-love.mp3" />
 

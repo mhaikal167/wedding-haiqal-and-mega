@@ -53,7 +53,7 @@ export function GuestBook({ initialMessages = [] }: GuestBookProps) {
   );
 
   const { data: messagesData, isLoading } = useMessages();
-  const { mutate: postMessage, isPending } = usePostMessage();
+  const { mutate: postMessage } = usePostMessage();
   const { likeMessage, reactMessage } = useUpdateMessages();
   useEffect(() => {
     if (messagesData) {
@@ -65,9 +65,9 @@ export function GuestBook({ initialMessages = [] }: GuestBookProps) {
     e.preventDefault();
     if (newMessage.name && newMessage.message) {
       postMessage({
-        name: "Haikal",
-        category: "Wedding",
-        message: "Selamat menempuh hidup baru 🎉",
+        name: newMessage.name,
+        category: newMessage.category,
+        message: newMessage.message,
       });
       setNewMessage({ name: "", message: "", category: "general" });
     }
@@ -96,7 +96,7 @@ export function GuestBook({ initialMessages = [] }: GuestBookProps) {
 
   const reactionEmojis = ["❤️", "😊", "🎉", "👏", "🤲", "🥰", "✨", "🌟"];
   const categoryLabels = {
-    blessing: "Doa & Berkah",
+    blessing: "Doa",
     memory: "Kenangan",
     wish: "Harapan",
     general: "Umum",
@@ -262,7 +262,7 @@ export function GuestBook({ initialMessages = [] }: GuestBookProps) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-2">
+                        <div className="">
                           <h4 className="font-semibold text-lg text-amber-800">
                             {message.name}
                           </h4>

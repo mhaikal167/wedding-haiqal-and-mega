@@ -1,14 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
-interface HeroSectionProps {
-  onScrollToMessages: () => void;
-  onShare: () => void;
-}
-
-export function HeroSection({ onScrollToMessages, onShare }: HeroSectionProps) {
+export function HeroSection() {
   const [guestName, setGuestName] = useState("Tamu Undangan");
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -54,10 +49,11 @@ export function HeroSection({ onScrollToMessages, onShare }: HeroSectionProps) {
         <div className="relative mb-8">
           <div className="floral-frame">
             <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl bg-white p-1 relative z-10">
-              <img
+              <Image
                 src="/images/lamaran-4.JPG"
                 alt="Haiqal & Mega"
-                className="w-full h-full object-cover rounded-full"
+                className="object-cover rounded-full"
+                fill
               />
             </div>
           </div>

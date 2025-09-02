@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Camera } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 
 interface Photo {
   id: number
@@ -40,10 +41,12 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         <div className="mb-8">
           <Card className="overflow-hidden">
             <div className="relative w-full h-96 md:h-[500px]">
-              <img
+              <Image
                 src={photos[currentPhotoIndex]?.src || "/placeholder.svg"}
                 alt={photos[currentPhotoIndex]?.alt || "Wedding Photo"}
-                className="w-full h-full object-cover transition-all duration-500"
+                fill
+                className="object-cover transition-all duration-500"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
@@ -65,11 +68,12 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
               }`}
               onClick={() => setCurrentPhotoIndex(index)}
             >
-              <div className="w-full h-32">
-                <img
+              <div className="relative w-full h-32">
+                <Image
                   src={photo.src || "/placeholder.svg"}
                   alt={photo.alt}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </Card>
