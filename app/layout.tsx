@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import QueryProvider from "@/components/ui/query-provider";
+import { Suspense } from "react";
+import LoadingScreen from "@/components/ui/loading";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -32,7 +35,9 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${dmSans.variable} antialiased`}
     >
       <body className="watercolor-bg">
-        {children}
+        <QueryProvider>
+          <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
+        </QueryProvider>
         <Toaster />
       </body>
     </html>
